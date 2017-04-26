@@ -25,7 +25,7 @@ try:
 except ImportError:
     from StringIO import StringIO
 
-SERVER_PORT = 8000
+SERVER_PORT = 3000
 encoding_type = 'gzip'
 
 def parse_options():
@@ -261,7 +261,8 @@ def test(HandlerClass = SimpleHTTPRequestHandler,
 
     parse_options()
 
-    server_address = ('127.0.0.1', SERVER_PORT)
+    server_address = ('10.2.108.180', SERVER_PORT)
+    # server_address = ('localhost', SERVER_PORT)
 
     SimpleHTTPRequestHandler.protocol_version = "HTTP/1.0"
     httpd = BaseHTTPServer.HTTPServer(server_address, SimpleHTTPRequestHandler)
